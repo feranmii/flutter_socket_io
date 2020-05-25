@@ -35,15 +35,15 @@ public class SocketListener implements Emitter.Listener {
                 data = args[0].toString();
             }
 
-//            final Handler _handler = new Handler(Looper.getMainLooper());
-//            _handler.post(new Runnable() {
-//                @Override
-//                public void run() {
-//                    _methodChannel.invokeMethod(_socketId + "|" + _event + "|" + _callback, data);
-//                }
-//            });
+            final Handler _handler = new Handler(Looper.getMainLooper());
+            _handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    _methodChannel.invokeMethod(_socketId + "|" + _event + "|" + _callback, data);
+                }
+            });
 
-            _methodChannel.invokeMethod(_socketId + "|" + _event + "|" + _callback, data);
+            //_methodChannel.invokeMethod(_socketId + "|" + _event + "|" + _callback, data);
 
         }
     }
