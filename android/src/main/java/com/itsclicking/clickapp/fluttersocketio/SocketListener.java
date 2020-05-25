@@ -28,7 +28,13 @@ public class SocketListener implements Emitter.Listener {
     public void call(Object... args) {
         if (args != null && _methodChannel != null && !Utils.isNullOrEmpty(_event)
                 && !Utils.isNullOrEmpty(_callback)) {
-            final String data = (args[0] != null ? args[0].toString() : "");
+            //final String data = (args[0] != null ? args[0].toString() : "");
+            String data = "";
+            if(args.length != 0 && args[0] != null)
+            {
+                data = args[0].toString();
+            }
+
             final Handler _handler = new Handler(Looper.getMainLooper());
             _handler.post(new Runnable() {
                 @Override
