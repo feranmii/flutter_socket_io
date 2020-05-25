@@ -29,7 +29,7 @@ public class SocketListener implements Emitter.Listener {
         if (args != null && _methodChannel != null && !Utils.isNullOrEmpty(_event)
                 && !Utils.isNullOrEmpty(_callback)) {
             //final String data = (args[0] != null ? args[0].toString() : "");
-            String data = "";
+            final String data = "";
             if(args.length != 0 && args[0] != null)
             {
                 data = args[0].toString();
